@@ -4,6 +4,8 @@ class Cards(val cardName: String = "", var cardValue: Int = 0, val cardImage: St
 
 }
 
+var loopTimes = 0
+
 public var allCards = listOf<Cards>( // All the cards in the deck
     Cards("One", 1, "null"),
     Cards("Two", 2, "null"),
@@ -20,3 +22,32 @@ public var allCards = listOf<Cards>( // All the cards in the deck
     Cards("Jack", 10, "null"),
     Cards("King", 10, "null")
 )
+
+fun drawCard(amount: Int) {
+    while (loopTimes != amount) {
+        val randomValue = (1..13).random()
+        val currentName: String = allCards[randomValue].cardName
+        var currentValue: Int = allCards[randomValue].cardValue
+
+        println("You drew: ${currentName}!")
+
+        if (currentName == "Ace" && yourTurn == true) {
+            var input: Int = 0
+            println("You drew an Ace! Do you want it to have the value of 1 or 10?")
+
+            //input = readln().toInt()
+
+            when(input) {
+                1 -> currentValue -= 9
+                10 -> currentValue -= 0
+            }
+        }
+
+        if (yourTurn == true) {
+            myScore += currentValue
+        } else if (yourTurn == false) {
+            enemyScore += currentValue
+        }
+        loopTimes++
+    }
+}
