@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/moneyLeftText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Money left: "
@@ -64,9 +65,9 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/betAmountText"
+        android:layout_width="70dp"
+        android:layout_height="19dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="48dp"
         android:text="Bet amount:"
