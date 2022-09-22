@@ -9,7 +9,6 @@ import android.widget.TextView
 
 var moneyInBank: Int = 500 // The amount of money the player currently have
 var bet: Int = 0 // Variable used for the amount of money in the bet
-var yourTurn: Boolean = true // Player's turn?
 var myScore: Int = 0 // Player's points from cards
 var enemyScore: Int = 0 // Dealers points from cards
 

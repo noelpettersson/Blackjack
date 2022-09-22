@@ -18,7 +18,7 @@ public var allCards = listOf<Cards>( // All the cards in the deck
     Cards("Eight", 8, R.drawable.eight_card),
     Cards("Nine", 9, R.drawable.nine_card),
     Cards("Ten", 10, R.drawable.ten_card),
-    Cards("Ace", 11, R.drawable.ace_card),
+    Cards("Ace", 0, R.drawable.ace_card),
     Cards("Queen", 10, R.drawable.queen_card),
     Cards("Jack", 10, R.drawable.jack_of_diamonds),
     Cards("King", 10, R.drawable.king_card)
