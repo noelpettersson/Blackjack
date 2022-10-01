@@ -7,21 +7,141 @@
     tools:context=".PlayActivity">
 
     <ImageView
-        android:id="@+id/card_1"
-        android:layout_width="89dp"
-        android:layout_height="144dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="16dp"
+        android:id="@+id/card_7"
+        android:layout_width="66dp"
+        android:layout_height="123dp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:srcCompat="@drawable/ace_card"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="492dp"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/card_9"
+        android:layout_width="66dp"
+        android:layout_height="123dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/ace_card"
+        tools:layout_editor_absoluteX="140dp"
+        tools:layout_editor_absoluteY="492dp"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/card_10"
+        android:layout_width="66dp"
+        android:layout_height="123dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/ace_card"
+        tools:layout_editor_absoluteX="204dp"
+        tools:layout_editor_absoluteY="492dp"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/card_11"
+        android:layout_width="66dp"
+        android:layout_height="123dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/ace_card"
+        tools:layout_editor_absoluteX="272dp"
+        tools:layout_editor_absoluteY="492dp"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/card_12"
+        android:layout_width="66dp"
+        android:layout_height="123dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/ace_card"
+        tools:layout_editor_absoluteX="340dp"
+        tools:layout_editor_absoluteY="492dp"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/card_8"
+        android:layout_width="66dp"
+        android:layout_height="123dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/ace_card"
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="492dp"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/dealerCard_7"
+        android:layout_width="66dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="131dp"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ace_card"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/dealerCard_9"
+        android:layout_width="66dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="131dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ace_card"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/dealerCard_11"
+        android:layout_width="66dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="272dp"
+        android:layout_marginTop="131dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ace_card"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/dealerCard_12"
+        android:layout_width="66dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="340dp"
+        android:layout_marginTop="131dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ace_card"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/dealerCard_8"
+        android:layout_width="66dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="131dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ace_card"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/dealerCard_10"
+        android:layout_width="66dp"
+        android:layout_height="123dp"
+        android:layout_marginTop="131dp"
+        android:layout_marginEnd="141dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ace_card"
         tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/dealerCard_1"
-        android:layout_width="89dp"
-        android:layout_height="144dp"
+        android:layout_width="66dp"
+        android:layout_height="123dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="19dp"
         android:layout_marginBottom="568dp"
@@ -35,9 +155,9 @@
 
     <ImageView
         android:id="@+id/dealerCard_2"
-        android:layout_width="89dp"
-        android:layout_height="144dp"
-        android:layout_marginStart="104dp"
+        android:layout_width="66dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="72dp"
         android:layout_marginTop="19dp"
         android:layout_marginBottom="568dp"
         android:visibility="invisible"
@@ -50,9 +170,9 @@
 
     <ImageView
         android:id="@+id/dealerCard_3"
-        android:layout_width="89dp"
-        android:layout_height="144dp"
-        android:layout_marginStart="200dp"
+        android:layout_width="66dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="140dp"
         android:layout_marginTop="19dp"
         android:layout_marginBottom="568dp"
         android:visibility="invisible"
@@ -65,9 +185,9 @@
 
     <ImageView
         android:id="@+id/dealerCard_4"
-        android:layout_width="89dp"
-        android:layout_height="144dp"
-        android:layout_marginStart="304dp"
+        android:layout_width="66dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="204dp"
         android:layout_marginTop="19dp"
         android:layout_marginBottom="568dp"
         android:visibility="invisible"
@@ -79,11 +199,53 @@
         tools:visibility="visible" />
 
     <ImageView
+        android:id="@+id/dealerCard_5"
+        android:layout_width="66dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="272dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginBottom="568dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ace_card"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/dealerCard_6"
+        android:layout_width="66dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="340dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginBottom="568dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ace_card"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/card_6"
+        android:layout_width="66dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="340dp"
+        android:layout_marginBottom="4dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ace_card"
+        tools:visibility="visible" />
+
+    <ImageView
         android:id="@+id/card_2"
-        android:layout_width="89dp"
-        android:layout_height="144dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="66dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginBottom="4dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -92,25 +254,49 @@
 
     <ImageView
         android:id="@+id/card_3"
-        android:layout_width="89dp"
-        android:layout_height="144dp"
-        android:layout_marginEnd="120dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="66dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginBottom="4dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ace_card"
         tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/card_4"
-        android:layout_width="89dp"
-        android:layout_height="144dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="66dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginBottom="4dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ace_card"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/card_5"
+        android:layout_width="66dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="272dp"
+        android:layout_marginBottom="4dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ace_card"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/card_1"
+        android:layout_width="66dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="4dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ace_card"
         tools:visibility="visible" />
 
@@ -144,10 +330,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="176dp"
         android:layout_marginEnd="177dp"
-        android:layout_marginBottom="201dp"
+        android:layout_marginBottom="256dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -161,11 +348,21 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/standButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="396dp"
+        android:text="stand"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
         android:id="@+id/restartButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="155dp"
-        android:layout_marginTop="240dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="292dp"
         android:text="Restart"
         android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
