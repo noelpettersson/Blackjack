@@ -15,29 +15,34 @@ fun drawCard() {
 }
 
 //TODO Spara money variabeln lokalt på enheten
-//TODO Få betting att fungera som det ska
 //TODO Koda om restart activity
 //TODO Ge dealern en Ace funktion
 //TODO Bakgrund, musik, ljudeffekter
 
 
 
-var playerCurrentCard: Int = 0 // Used for going through the players cards
-var dealerCurrentCard: Int = 0
-var yourTurn: Boolean = true // Player's turn?
-var stand: Boolean = false
+
 
 class PlayActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_play)
 
+        var myScore: Int = 0 // Player's points from cards
+        var enemyScore: Int = 0 // Dealers points from cards
+        var playerCurrentCard: Int = 0 // Used for going through the players cards
+        var dealerCurrentCard: Int = 0
+        var yourTurn: Boolean = true // Player's turn?
+        var stand: Boolean = false
+
         val playerCardsArray: List<ImageView> = listOf(findViewById(R.id.card_1), findViewById(R.id.card_2), findViewById(R.id.card_3), findViewById(R.id.card_4), findViewById(R.id.card_5), findViewById(R.id.card_6), findViewById(R.id.card_7), findViewById(R.id.card_8), findViewById(R.id.card_9), findViewById(R.id.card_10), findViewById(R.id.card_11), findViewById(R.id.card_12))
         val dealerCardsArray: List<ImageView> = listOf(findViewById(R.id.dealerCard_1), findViewById(R.id.dealerCard_2), findViewById(R.id.dealerCard_3), findViewById(R.id.dealerCard_4), findViewById(R.id.dealerCard_5), findViewById(R.id.dealerCard_6), findViewById(R.id.dealerCard_7), findViewById(R.id.dealerCard_8), findViewById(R.id.dealerCard_9), findViewById(R.id.dealerCard_10), findViewById(R.id.dealerCard_11), findViewById(R.id.dealerCard_12))
-        val hitButton = findViewById<Button>(R.id.test) // Hit
-        val myScoreText = findViewById<TextView>(R.id.myScoreText) // Players score
+
+        val hitButton = findViewById<Button>(R.id.test)
         val restartButton = findViewById<Button>(R.id.restartButton)
         val standButton = findViewById<Button>(R.id.standButton)
+
+        val myScoreText = findViewById<TextView>(R.id.myScoreText) // Players score
 
 
         fun aceFunction() { // Control ace value
@@ -68,9 +73,9 @@ class PlayActivity : AppCompatActivity() {
             restartButton.visibility = View.VISIBLE // Make restart button visible
 
             restartButton.setOnClickListener {
-                val intent = Intent(this, PlayActivity::class.java)
-                startActivity(intent)
-                setContentView(R.layout.activity_main)
+                bet = 0
+                super.finish()
+
             }
         }
 
@@ -125,6 +130,8 @@ class PlayActivity : AppCompatActivity() {
 
                 if(allCards[randomValue].cardName == "Ace" && yourTurn) {
                     aceFunction() // Call ace function
+                } else if(allCards[randomValue].cardName == "Ace" && !yourTurn) {
+
                 }
 
                 if (yourTurn == true) {
@@ -150,8 +157,6 @@ class PlayActivity : AppCompatActivity() {
 
                 yourTurn = false
                 drawCard()
-                drawCard()
-
 
                 hitButton.setOnClickListener {
                     yourTurn = true

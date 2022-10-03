@@ -3,14 +3,13 @@ package com.example.myapplication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 
 var moneyInBank: Int = 500 // The amount of money the player currently have
 var bet: Int = 0 // Variable used for the amount of money in the bet
-var myScore: Int = 0 // Player's points from cards
-var enemyScore: Int = 0 // Dealers points from cards
 
 
 class MainActivity : AppCompatActivity() {
@@ -32,8 +31,12 @@ class MainActivity : AppCompatActivity() {
         betAmountText.text = "Bet: ${bet}"
 
         playButton.setOnClickListener() {
-            val Intent = Intent(this, PlayActivity::class.java)
-            startActivity(Intent) // Switch to PlayActivity
+            if (bet > 0) { // Only allow user to play if bet is above 0
+                val Intent = Intent(this, PlayActivity::class.java)
+                startActivity(Intent) // Switch to PlayActivity
+            } else {
+                Log.d("DEBUG", "No bet set")
+            }
         }
 
         //

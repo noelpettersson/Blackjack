@@ -10,60 +10,72 @@
         android:id="@+id/card_7"
         android:layout_width="66dp"
         android:layout_height="123dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="116dp"
         android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ace_card"
-        tools:layout_editor_absoluteX="4dp"
-        tools:layout_editor_absoluteY="492dp"
         tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/card_9"
         android:layout_width="66dp"
         android:layout_height="123dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginBottom="116dp"
         android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ace_card"
-        tools:layout_editor_absoluteX="140dp"
-        tools:layout_editor_absoluteY="492dp"
         tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/card_10"
         android:layout_width="66dp"
         android:layout_height="123dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginBottom="116dp"
         android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ace_card"
-        tools:layout_editor_absoluteX="204dp"
-        tools:layout_editor_absoluteY="492dp"
         tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/card_11"
         android:layout_width="66dp"
         android:layout_height="123dp"
+        android:layout_marginStart="272dp"
+        android:layout_marginBottom="116dp"
         android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ace_card"
-        tools:layout_editor_absoluteX="272dp"
-        tools:layout_editor_absoluteY="492dp"
         tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/card_12"
         android:layout_width="66dp"
         android:layout_height="123dp"
+        android:layout_marginStart="340dp"
+        android:layout_marginBottom="116dp"
         android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ace_card"
-        tools:layout_editor_absoluteX="340dp"
-        tools:layout_editor_absoluteY="492dp"
         tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/card_8"
         android:layout_width="66dp"
         android:layout_height="123dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginBottom="116dp"
         android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ace_card"
-        tools:layout_editor_absoluteX="72dp"
-        tools:layout_editor_absoluteY="492dp"
         tools:visibility="visible" />
 
     <ImageView
@@ -368,4 +380,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/dealerScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="178dp"
+        android:layout_marginTop="261dp"
+        android:layout_marginEnd="233dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
