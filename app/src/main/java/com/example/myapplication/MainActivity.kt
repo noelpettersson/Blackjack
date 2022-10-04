@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -20,12 +21,14 @@ class MainActivity : AppCompatActivity() {
         //Init variables
         val moneyLeftText = findViewById<TextView>(R.id.moneyLeftText)
         val betAmountText = findViewById<TextView>(R.id.betAmountText)
+        val errorMessageText = findViewById<TextView>(R.id.errorMessage)
 
         val playButton = findViewById<Button>(R.id.playButton)
 
         val bet10Button = findViewById<Button>(R.id.bet10)
         val bet50Button = findViewById<Button>(R.id.bet50)
         val bet100Button = findViewById<Button>(R.id.bet100)
+
 
         moneyLeftText.text = "Money in bank: ${moneyInBank}"
         betAmountText.text = "Bet: ${bet}"
@@ -36,11 +39,13 @@ class MainActivity : AppCompatActivity() {
                 startActivity(Intent) // Switch to PlayActivity
             } else {
                 Log.d("DEBUG", "No bet set")
+                errorMessageText.gravity = Gravity.CENTER
+                errorMessageText.text = "You have to bet money to play!"
             }
         }
 
         //
-        fun betSetter(betAmount: Int) { // Set bet amount
+        fun betSetter (betAmount: Int) { // Set bet amount
            if(moneyInBank > 0) { // If user has no money do nothing
                bet += betAmount // Update bet amount
                moneyInBank -= betAmount // Update money in bank
