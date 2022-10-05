@@ -1,24 +1,26 @@
 package com.example.myapplication
 
 import android.content.Intent
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
+
+var playMusic: Boolean = true
 
 var moneyInBank: Int = 500 // The amount of money the player currently have
 var bet: Int = 0 // Variable used for the amount of money in the bet
-
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //Init variables
+        var mediaPlayer = MediaPlayer.create(this, R.raw.bgmusic)
+        
         val moneyLeftText = findViewById<TextView>(R.id.moneyLeftText)
         val betAmountText = findViewById<TextView>(R.id.betAmountText)
         val errorMessageText = findViewById<TextView>(R.id.errorMessage)
@@ -29,9 +31,11 @@ class MainActivity : AppCompatActivity() {
         val bet50Button = findViewById<Button>(R.id.bet50)
         val bet100Button = findViewById<Button>(R.id.bet100)
 
-
-        moneyLeftText.text = "Money in bank: ${moneyInBank}"
-        betAmountText.text = "Bet: ${bet}"
+        if (playMusic) {
+            mediaPlayer.start()
+        } else {
+            mediaPlayer.stop()
+        }
 
         playButton.setOnClickListener() {
             if (bet > 0) { // Only allow user to play if bet is above 0
@@ -65,10 +69,18 @@ class MainActivity : AppCompatActivity() {
         bet100Button.setOnClickListener { // Bet 100 chips button
             betSetter(100)
         }
-        //
 
 
     }
+    override fun onResume() {
+        super.onResume()
+        Log.d("DEBUG", "Activity resumed")
 
+        //Update money left and bet text
+        val moneyLeftText = findViewById<TextView>(R.id.moneyLeftText)
+        val betAmountText = findViewById<TextView>(R.id.betAmountText)
 
+        moneyLeftText.text = "Money in bank: ${moneyInBank}"
+        betAmountText.text = "Bet: ${bet}"
+    }
 }

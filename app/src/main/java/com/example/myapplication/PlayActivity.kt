@@ -1,13 +1,16 @@
 package com.example.myapplication
 
-import android.content.Intent
+import android.app.Activity
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat.recreate
+import kotlinx.coroutines.delay
 import java.util.*
 
 //TODO Spara money variabeln lokalt på enheten
@@ -38,8 +41,11 @@ class PlayActivity : AppCompatActivity() {
 
         fun restartFunction() { // Function to restart the game
             restartButton.visibility = View.VISIBLE // Make restart button visible
+            hitButton.visibility = View.INVISIBLE
+            standButton.visibility = View.INVISIBLE
 
             restartButton.setOnClickListener {
+                bet = 0
                 super.finish()
             }
         }
@@ -51,25 +57,13 @@ class PlayActivity : AppCompatActivity() {
                 restartFunction()
             }
 
-            else if(myScore < enemyScore && stand && enemyScore < 22) {
+            if(myScore < enemyScore && stand && enemyScore < 22) {
                 Log.d("DEBUG", "User lost, money in bank: ${moneyInBank}")
                 bet = 0 // remove later
                 restartFunction()
             }
 
-            if (myScore == 21 && enemyScore < 21) {
-                moneyInBank += bet * 2
-                Log.d("DEBUG", "Blackjack, money in bank: ${moneyInBank}")
-                restartFunction()
-            }
-
-            if (myScore == 21 && enemyScore == 21) {
-                moneyInBank += bet
-                Log.d("DEBUG", "Draw, money in bank: ${moneyInBank}" )
-                restartFunction()
-            }
-
-            if (myScore == enemyScore && enemyScore >= 17) {
+            if (myScore == enemyScore && stand && enemyScore >= 17) {
                 moneyInBank += bet
                 Log.d("DEBUG", "Draw, money in bank: ${moneyInBank}")
                 restartFunction()
@@ -89,7 +83,7 @@ class PlayActivity : AppCompatActivity() {
         }
 
         fun drawCard() {
-                val rand = Random(System.currentTimeMillis()) // Get current time
+                val rand = Random()
                 val randomValue = rand.nextInt(12) // Create random value from 1-12 from current time seed
 
 
@@ -118,8 +112,6 @@ class PlayActivity : AppCompatActivity() {
                     dealerCurrentCard++
                     dealerScoreText.text = enemyScore.toString()
                 }
-
-
 
             }
 
