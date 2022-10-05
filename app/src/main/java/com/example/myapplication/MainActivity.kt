@@ -2,11 +2,14 @@ package com.example.myapplication
 
 import android.content.Intent
 import android.media.MediaPlayer
+import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
+import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 
 var playMusic: Boolean = true
@@ -19,8 +22,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var mediaPlayer = MediaPlayer.create(this, R.raw.bgmusic)
-        
+        val mediaPlayer = MediaPlayer.create(this, R.raw.bgmusic)
+        val speakerButton = findViewById<ImageView>(R.id.speakerButton)
+
         val moneyLeftText = findViewById<TextView>(R.id.moneyLeftText)
         val betAmountText = findViewById<TextView>(R.id.betAmountText)
         val errorMessageText = findViewById<TextView>(R.id.errorMessage)
@@ -31,10 +35,21 @@ class MainActivity : AppCompatActivity() {
         val bet50Button = findViewById<Button>(R.id.bet50)
         val bet100Button = findViewById<Button>(R.id.bet100)
 
-        if (playMusic) {
-            mediaPlayer.start()
-        } else {
-            mediaPlayer.stop()
+        mediaPlayer.start()
+
+        speakerButton.setOnClickListener() {
+            if (playMusic) {
+                playMusic = false
+                mediaPlayer.stop()
+                speakerButton.setImageResource(R.drawable.speaker_on)
+            } else {
+                playMusic = true
+                mediaPlayer.start()
+                speakerButton.setImageResource(R.drawable.speakeroff)
+            }
+
+
+            Log.d("DEBUG", "Speaker button pressed")
         }
 
         playButton.setOnClickListener() {
@@ -43,8 +58,8 @@ class MainActivity : AppCompatActivity() {
                 startActivity(Intent) // Switch to PlayActivity
             } else {
                 Log.d("DEBUG", "No bet set")
-                errorMessageText.gravity = Gravity.CENTER
-                errorMessageText.text = "You have to bet money to play!"
+                errorMessageText.visibility = View.VISIBLE
+                errorMessageText.text = "${getString(R.string.error_bet)}"
             }
         }
 
@@ -53,8 +68,8 @@ class MainActivity : AppCompatActivity() {
            if(moneyInBank > 0) { // If user has no money do nothing
                bet += betAmount // Update bet amount
                moneyInBank -= betAmount // Update money in bank
-               moneyLeftText.text = "Money in bank: ${moneyInBank}" // Update text
-               betAmountText.text = "Bet: ${bet}"
+               moneyLeftText.text = "${getString(R.string.money_left)} ${moneyInBank}" // Update text
+               betAmountText.text = "${getString(R.string.bet_amount)} ${bet}"
            }
         }
 
@@ -76,11 +91,14 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         Log.d("DEBUG", "Activity resumed")
 
-        //Update money left and bet text
+        //Update money left and bet text when activity loads after playActivity
         val moneyLeftText = findViewById<TextView>(R.id.moneyLeftText)
         val betAmountText = findViewById<TextView>(R.id.betAmountText)
+        val errorMessageText = findViewById<TextView>(R.id.errorMessage)
 
-        moneyLeftText.text = "Money in bank: ${moneyInBank}"
-        betAmountText.text = "Bet: ${bet}"
+        errorMessageText.visibility = View.INVISIBLE
+
+        moneyLeftText.text = "${getString(R.string.money_left)} ${moneyInBank}"
+        betAmountText.text = "${getString(R.string.bet_amount)} ${bet}"
     }
 }

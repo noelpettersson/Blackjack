@@ -7,18 +7,18 @@
     android:background="@drawable/blackjacktable"
     tools:context=".MainActivity">
 
+
     <TextView
         android:id="@+id/moneyLeftText"
         android:layout_width="365dp"
         android:layout_height="31dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="26dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="80dp"
         android:text="Money left: "
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <Button
         android:id="@+id/playButton"
@@ -60,18 +60,20 @@
         android:id="@+id/bet100"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="314dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="62dp"
         android:text="100"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/betAmountText"
         android:layout_width="366dp"
         android:layout_height="29dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="124dp"
         android:text="Bet amount:"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
@@ -82,10 +84,23 @@
         android:id="@+id/errorMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="120dp"
-        android:layout_marginBottom="285dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="424dp"
+        android:layout_marginEnd="150dp"
+        android:gravity="center_vertical"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.413"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/speakerButton"
+        android:layout_width="65dp"
+        android:layout_height="72dp"
+        app:srcCompat="@drawable/speakeroff"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="-2dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
