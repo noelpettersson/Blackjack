@@ -99,7 +99,7 @@
         android:id="@+id/speakerButton"
         android:layout_width="65dp"
         android:layout_height="72dp"
-        app:srcCompat="@drawable/speakeroff"
+        app:srcCompat="@drawable/speaker_on"
         tools:layout_editor_absoluteX="5dp"
         tools:layout_editor_absoluteY="-2dp" />
 

@@ -2,11 +2,9 @@ package com.example.myapplication
 
 import android.graphics.drawable.Drawable
 
-class Cards(val cardName: String = "", var cardValue: Int = 0, val cardImage: Int, val amountDeck: Int = 4) {
+class Cards(val cardName: String = "", var cardValue: Int = 0, val cardImage: Int) {
 
 }
-
-var loopTimes = 0
 
 public var allCards = listOf<Cards>( // All the cards in the deck
     Cards("Two", 2, R.drawable.two_card),

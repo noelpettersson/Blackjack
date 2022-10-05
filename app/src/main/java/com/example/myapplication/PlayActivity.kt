@@ -1,21 +1,13 @@
 package com.example.myapplication
 
-import android.app.Activity
 import android.os.Bundle
-import android.os.Handler
 import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat.recreate
-import kotlinx.coroutines.delay
 import java.util.*
-
-//TODO Spara money variabeln lokalt på enheten
-//TODO Bakgrund, musik, ljudeffekter
-
 
 class PlayActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -149,7 +141,6 @@ class PlayActivity : AppCompatActivity() {
             }
 
         initGame()
-
 
         }
     }
